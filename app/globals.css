@@ -1,0 +1,349 @@
+@import "tailwindcss";
+
+/* ===========================================================================
+   TUSHAR MENATH — Coaching
+   Raw, dark, adrenaline gym aesthetic:
+   blacked-out surfaces, heavy condensed display, scarlet red, film grain.
+   =========================================================================== */
+
+@theme {
+  /* Surfaces (dark) */
+  --color-base: #0a0908;
+  --color-surface: #131110;
+  --color-surface-2: #1c1916;
+  --color-ink: #050403; /* darkest — pure-black sections */
+  --color-white: #ffffff;
+
+  /* Text */
+  --color-bone: #f4f1ea;
+  --color-mute: #9c958a;
+  --color-faint: #6a645b;
+  --color-line: #262320;
+  --color-line-2: #36312b;
+
+  /* Accent — adrenaline red */
+  --color-accent: #e8261c;
+  --color-accent-press: #c01409;
+  --color-accent-soft: #25090a;
+
+  /* Fonts (wired from next/font in layout.tsx) */
+  --font-display: var(--font-display-src), "Arial Narrow", Impact, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono-src), ui-monospace, "SFMono-Regular", Menlo,
+    monospace;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-base);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  letter-spacing: -0.011em;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-2);
+  border: 3px solid var(--color-base);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* ---------------------------------------------------------------------------
+   Typography — heavy condensed poster display
+   --------------------------------------------------------------------------- */
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  line-height: 0.98;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+/* Emphasis word inside a headline — paired with text-accent (red) */
+.serif-italic {
+  font-style: normal;
+}
+
+/* Outlined poster word — transparent fill, stroked edge */
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-bone);
+}
+
+.balance {
+  text-wrap: balance;
+}
+.pretty {
+  text-wrap: pretty;
+}
+
+/* Coded mono micro-label — Garden "view-source" device: [ LABEL ] */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: var(--color-accent);
+}
+.eyebrow::before {
+  content: "[";
+  margin-right: 0.6ch;
+  opacity: 0.7;
+}
+.eyebrow::after {
+  content: "]";
+  margin-left: 0.6ch;
+  opacity: 0.7;
+}
+
+/* General monospace caption / label */
+.mono-label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------------------------
+   Buttons & links
+   --------------------------------------------------------------------------- */
+
+.btn-primary,
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 1rem 1.9rem;
+  border-radius: 4px;
+  transition:
+    background 0.3s var(--ease-out),
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out);
+}
+
+/* Primary = bone block on dark */
+.btn-primary {
+  color: var(--color-ink);
+  background: var(--color-bone);
+}
+.btn-primary:hover {
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Accent = red */
+.btn-accent {
+  color: #fff;
+  background: var(--color-accent);
+  box-shadow: 0 14px 40px -14px rgba(232, 38, 28, 0.6);
+}
+.btn-accent:hover {
+  background: var(--color-accent-press);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px -14px rgba(232, 38, 28, 0.8);
+}
+
+.btn-primary .arrow,
+.btn-accent .arrow {
+  transition: transform 0.3s var(--ease-out);
+}
+.btn-primary:hover .arrow,
+.btn-accent:hover .arrow {
+  transform: translateX(4px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--color-bone);
+  background: transparent;
+  padding: 1rem 1.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-line-2);
+  transition: all 0.3s var(--ease-out);
+}
+.btn-outline:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  color: var(--color-bone);
+  border-bottom: 1px solid var(--color-line-2);
+  padding-bottom: 3px;
+  transition: gap 0.3s var(--ease-out), color 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out);
+}
+.link-arrow:hover {
+  gap: 0.75rem;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ---------------------------------------------------------------------------
+   Surfaces
+   --------------------------------------------------------------------------- */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  transition:
+    transform 0.45s var(--ease-out),
+    border-color 0.45s var(--ease-out),
+    box-shadow 0.45s var(--ease-out);
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-mute);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+.rule {
+  height: 1px;
+  width: 100%;
+  background: var(--color-line);
+}
+
+.section {
+  padding-block: clamp(2.25rem, 4vw, 3.75rem);
+}
+
+.media {
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--color-surface-2);
+}
+
+.index-num {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-line-2);
+}
+
+/* ---------------------------------------------------------------------------
+   Atmosphere — grain + red glow
+   --------------------------------------------------------------------------- */
+
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.glow-red {
+  background: radial-gradient(
+    circle at center,
+    rgba(232, 38, 28, 0.22),
+    transparent 70%
+  );
+}
+
+/* Marquee */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
