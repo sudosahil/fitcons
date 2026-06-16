@@ -44,7 +44,7 @@ export function Navbar() {
             );
           })}
           <Link href="/apply" className="btn-primary !px-5 !py-2.5 !text-xs">
-            Apply for coaching
+            Work with me
           </Link>
         </div>
 
@@ -98,7 +98,7 @@ export function Navbar() {
             onClick={() => setOpen(false)}
             className="btn-primary mt-4 w-full"
           >
-            Apply for coaching
+            Work with me
           </Link>
         </div>
       </div>

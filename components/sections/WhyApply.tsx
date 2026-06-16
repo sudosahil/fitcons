@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/Icon";
 import { APPLY_REASONS, IMAGES } from "@/lib/data";
@@ -16,17 +15,17 @@ export function WhyApply() {
               <span className="eyebrow">Is this you?</span>
             </Reveal.Item>
             <Reveal.Item>
-              <h2 className="display mt-5 text-[2.5rem] leading-[0.98] text-bone sm:text-5xl lg:text-[3.4rem]">
+              <h2 className="display mt-3 text-[2.5rem] leading-[0.98] text-bone sm:text-5xl lg:text-[3.4rem]">
                 This coaching is{" "}
                 <span className="serif-italic text-accent">for you if…</span>
               </h2>
             </Reveal.Item>
 
-            <ul className="mt-9 border-t border-line">
+            <ul className="mt-7 border-t border-line">
               {APPLY_REASONS.map((r) => (
                 <Reveal.Item key={r}>
                   <li className="flex items-center gap-4 border-b border-line py-4">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-white">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-ink">
                       <Icon name="check" className="h-3.5 w-3.5" strokeWidth={3} />
                     </span>
                     <span className="text-lg text-bone">{r}</span>
@@ -34,13 +33,6 @@ export function WhyApply() {
                 </Reveal.Item>
               ))}
             </ul>
-
-            <Reveal.Item>
-              <Link href="/apply" className="btn-primary mt-9 w-full sm:w-auto">
-                That&apos;s me — apply now
-                <Icon name="arrow" className="arrow h-4 w-4" />
-              </Link>
-            </Reveal.Item>
           </Reveal>
 
           {/* Image */}

@@ -26,13 +26,13 @@ export function SectionHeading({
       <Reveal.Item>
         <span className="eyebrow">{eyebrow}</span>
       </Reveal.Item>
-      <h2 className="display mt-5 text-[2.5rem] leading-[0.98] text-bone sm:text-5xl lg:text-[3.6rem]">
+      <h2 className="display mt-3 text-[2.5rem] leading-[0.98] text-bone sm:text-5xl lg:text-[3.6rem]">
         <ScanReveal>{title}</ScanReveal>
       </h2>
       {subtitle && (
         <Reveal.Item>
           <p
-            className={`mt-5 text-lg leading-relaxed text-mute pretty ${
+            className={`mt-3.5 text-lg leading-relaxed text-mute pretty ${
               isCenter ? "mx-auto max-w-2xl" : "max-w-2xl"
             }`}
           >

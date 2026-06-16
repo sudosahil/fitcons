@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
@@ -29,7 +28,7 @@ export function WhatYouGet() {
 
         <Reveal
           stagger
-          className="mt-8 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-6"
+          className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-6"
         >
           {FEATURES.map((f, i) => {
             const wide = isWide(i);
@@ -51,7 +50,7 @@ export function WhatYouGet() {
                         wide ? "shrink-0" : "flex items-center justify-between"
                       }
                     >
-                      <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent-soft text-accent transition-colors duration-500 group-hover/spot:bg-accent group-hover/spot:text-white">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent-soft text-accent transition-colors duration-500 group-hover/spot:bg-accent group-hover/spot:text-ink">
                         <Icon name={f.icon as IconName} className="h-6 w-6" />
                       </span>
                       {!wide && (
@@ -73,18 +72,6 @@ export function WhatYouGet() {
               </Reveal.Item>
             );
           })}
-        </Reveal>
-
-        <Reveal className="mt-8 border-t border-line pt-8 sm:mt-8">
-          <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
-            <p className="max-w-md font-display text-2xl text-bone sm:text-3xl">
-              Ready to put every one of these to work?
-            </p>
-            <Link href="/apply" className="btn-accent w-full sm:w-auto sm:shrink-0">
-              Start your transformation
-              <Icon name="arrow" className="arrow h-4 w-4" />
-            </Link>
-          </div>
         </Reveal>
       </div>
     </section>

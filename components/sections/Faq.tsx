@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Icon } from "@/components/ui/Icon";
-import { FAQS } from "@/lib/data";
+import { FAQS, BRAND } from "@/lib/data";
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -29,10 +28,15 @@ export function Faq() {
             />
             <Reveal className="mt-8">
               <p className="text-mute">Still have questions?</p>
-              <Link href="/apply" className="link-arrow mt-3">
-                Apply &amp; ask on your call
+              <a
+                href={BRAND.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-arrow mt-3"
+              >
+                Message Tushar directly
                 <Icon name="arrow" className="h-4 w-4" />
-              </Link>
+              </a>
             </Reveal>
           </div>
 
@@ -53,7 +57,7 @@ export function Faq() {
                       <span
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-400 ${
                           isOpen
-                            ? "rotate-45 border-accent bg-accent text-white"
+                            ? "rotate-45 border-accent bg-accent text-ink"
                             : "border-line-2 text-bone"
                         }`}
                       >

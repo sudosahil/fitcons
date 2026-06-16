@@ -3,7 +3,7 @@
 /* ===========================================================================
    TUSHAR MENATH — Coaching
    Raw, dark, adrenaline gym aesthetic:
-   blacked-out surfaces, heavy condensed display, scarlet red, film grain.
+   blacked-out surfaces, heavy condensed display, championship gold, film grain.
    =========================================================================== */
 
 @theme {
@@ -21,10 +21,11 @@
   --color-line: #262320;
   --color-line-2: #36312b;
 
-  /* Accent — adrenaline red */
-  --color-accent: #e8261c;
-  --color-accent-press: #c01409;
-  --color-accent-soft: #25090a;
+  /* Accent — championship gold (deep, metallic — not neon) */
+  --color-accent: #d4a017;
+  --color-accent-press: #b3851a;
+  --color-accent-soft: #211a07;
+  --color-on-accent: #0a0908; /* dark text for use on gold fills */
 
   /* Fonts (wired from next/font in layout.tsx) */
   --font-display: var(--font-display-src), "Arial Narrow", Impact, sans-serif;
@@ -60,7 +61,7 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-on-accent);
 }
 
 ::-webkit-scrollbar {
@@ -84,18 +85,18 @@ body {
 
 .font-display {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.01em;
   line-height: 0.98;
 }
 
 .display {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
-  line-height: 0.92;
-  letter-spacing: 0.01em;
+  line-height: 0.9;
+  letter-spacing: 0.005em;
   text-wrap: balance;
 }
 
@@ -177,20 +178,20 @@ body {
 }
 .btn-primary:hover {
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-on-accent);
   transform: translateY(-2px);
 }
 
-/* Accent = red */
+/* Accent = gold */
 .btn-accent {
-  color: #fff;
+  color: var(--color-on-accent);
   background: var(--color-accent);
-  box-shadow: 0 14px 40px -14px rgba(232, 38, 28, 0.6);
+  box-shadow: 0 14px 40px -16px rgba(212, 160, 23, 0.45);
 }
 .btn-accent:hover {
   background: var(--color-accent-press);
   transform: translateY(-2px);
-  box-shadow: 0 18px 50px -14px rgba(232, 38, 28, 0.8);
+  box-shadow: 0 18px 50px -16px rgba(212, 160, 23, 0.6);
 }
 
 .btn-primary .arrow,
@@ -222,7 +223,7 @@ body {
 .btn-outline:hover {
   border-color: var(--color-accent);
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-on-accent);
   transform: translateY(-2px);
 }
 
@@ -298,6 +299,15 @@ body {
   background: var(--color-surface-2);
 }
 
+/* Editorial photo grade — desaturate + warm so mixed photography reads as one
+   cohesive, intentional set rather than random stock. */
+.img-grade {
+  filter: saturate(0.78) contrast(1.06) brightness(0.97);
+}
+.media img {
+  filter: saturate(0.82) contrast(1.05);
+}
+
 .index-num {
   font-family: var(--font-display);
   font-weight: 400;
@@ -306,7 +316,7 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
-   Atmosphere — grain + red glow
+   Atmosphere — grain + gold glow
    --------------------------------------------------------------------------- */
 
 .grain::before {
@@ -315,16 +325,63 @@ body {
   inset: 0;
   z-index: 70;
   pointer-events: none;
-  opacity: 0.06;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .glow-red {
   background: radial-gradient(
     circle at center,
-    rgba(232, 38, 28, 0.22),
-    transparent 70%
+    rgba(212, 160, 23, 0.1),
+    transparent 68%
   );
+}
+
+/* ---------------------------------------------------------------------------
+   Ambient background FX — faint grid + slow-drifting gold glow.
+   21st.dev-style animated background, rebuilt on the site's tokens.
+   Mounted inside relatively-positioned dark sections via <BackgroundFX/>.
+   --------------------------------------------------------------------------- */
+
+.fx-grid {
+  background-image: linear-gradient(
+      to right,
+      var(--color-line) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 58px 58px;
+  opacity: 0.45;
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 65% at 50% 0%,
+    #000 25%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 65% at 50% 0%,
+    #000 25%,
+    transparent 78%
+  );
+}
+
+@keyframes fx-drift {
+  0%,
+  100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate(-38%, 7%) scale(1.14);
+    opacity: 0.85;
+  }
+}
+.fx-glow {
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 160, 23, 0.12),
+    transparent 64%
+  );
+  animation: fx-drift 16s ease-in-out infinite;
 }
 
 /* Marquee */

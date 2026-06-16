@@ -424,7 +424,7 @@ function Choices({
             <span className="text-base">{opt}</span>
             <span
               className={`flex h-5 w-5 items-center justify-center rounded-full border transition-colors ${
-                active ? "border-accent bg-accent text-white" : "border-line-2"
+                active ? "border-accent bg-accent text-ink" : "border-line-2"
               }`}
             >
               {active && (
@@ -450,7 +450,7 @@ function SuccessState({ recommendation }: { recommendation: string }) {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 0.15, type: "spring", stiffness: 200 }}
-        className="mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white"
+        className="mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-accent text-ink"
       >
         <Icon name="check" className="h-8 w-8" strokeWidth={2.5} />
       </motion.div>

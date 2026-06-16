@@ -24,7 +24,7 @@ export function Footer() {
             </p>
           </div>
           <Link href="/apply" className="btn-accent">
-            Apply for coaching
+            Work with me
             <Icon name="arrow" className="arrow h-4 w-4" />
           </Link>
         </div>
@@ -46,7 +46,8 @@ export function Footer() {
                 { href: "/program", label: "The program" },
                 { href: "/results", label: "Client results" },
                 { href: "/faq", label: "FAQ" },
-                { href: "/apply", label: "Apply for coaching" },
+                { href: "/apply", label: "Apply" },
+                { href: "/#plans", label: "Plans" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link

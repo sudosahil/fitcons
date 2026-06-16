@@ -16,11 +16,11 @@ export function FinalCta() {
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-25"
+          className="img-grade object-cover object-center opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/85 to-ink" />
       </div>
-      <div className="glow-red pointer-events-none absolute left-1/2 top-1/2 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2" />
+      <div className="glow-red pointer-events-none absolute left-1/2 top-1/2 h-[18rem] w-[18rem] -translate-x-1/2 -translate-y-1/2" />
 
       <div className="relative z-10 mx-auto max-w-3xl px-5 py-12 text-center sm:px-8 sm:py-16">
         <Reveal stagger>
@@ -45,7 +45,7 @@ export function FinalCta() {
                 href="/apply"
                 className="btn-accent w-full sm:w-auto"
               >
-                Apply for coaching now
+                Claim your spot
                 <Icon name="arrow" className="arrow h-4 w-4" />
               </Link>
             </div>

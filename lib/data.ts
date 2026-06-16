@@ -241,3 +241,76 @@ export const TIMELINES = [
   "6–12 months",
   "No rush — long term",
 ];
+
+// ---------------------------------------------------------------------------
+// Coaching plans + the Plan Finder (a quick budget-based recommender, separate
+// from the full application quiz).
+// NOTE: prices are placeholders — update priceLabel with Tushar's real rates.
+// ---------------------------------------------------------------------------
+
+export type Plan = {
+  id: "kickstart" | "transform" | "elite";
+  name: string;
+  badge: string;
+  priceLabel: string;
+  bestFor: string;
+  features: string[];
+};
+
+export const PLANS: Record<Plan["id"], Plan> = {
+  kickstart: {
+    id: "kickstart",
+    name: "Kickstart",
+    badge: "Foundation",
+    priceLabel: "from ₹2,499 / mo",
+    bestFor: "Beginners building their first real routine.",
+    features: [
+      "Custom training program",
+      "Simple nutrition targets",
+      "Bi-weekly check-ins",
+      "Chat support",
+    ],
+  },
+  transform: {
+    id: "transform",
+    name: "Transform",
+    badge: "Most popular",
+    priceLabel: "from ₹4,999 / mo",
+    bestFor: "Committed lifters chasing visible, lasting change.",
+    features: [
+      "Fully personalized training & nutrition",
+      "Weekly 1-on-1 check-ins",
+      "Direct WhatsApp access",
+      "Progress, habit & mindset coaching",
+    ],
+  },
+  elite: {
+    id: "elite",
+    name: "Elite 1:1",
+    badge: "Premium",
+    priceLabel: "from ₹9,999 / mo",
+    bestFor: "Stage prep & those who want a champion on call.",
+    features: [
+      "Everything in Transform",
+      "Contest prep, peaking & posing",
+      "Stage-day strategy",
+      "Priority daily access to Tushar",
+    ],
+  },
+};
+
+// Plan Finder questions
+export const PF_GOALS = [
+  "Lose fat",
+  "Build muscle",
+  "Body recomposition",
+  "Contest prep",
+];
+
+export const PF_LEVELS = ["Beginner", "Intermediate", "Advanced"];
+
+export const PF_BUDGETS = [
+  { label: "Under ₹3,000 / mo", value: "kickstart" as const },
+  { label: "₹3,000 – ₹7,000 / mo", value: "transform" as const },
+  { label: "₹7,000+ / mo", value: "elite" as const },
+];

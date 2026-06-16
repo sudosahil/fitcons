@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ScanReveal } from "@/components/ui/ScanReveal";
+import { BackgroundFX } from "@/components/ui/BackgroundFX";
 import type { ReactNode } from "react";
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
@@ -14,8 +15,8 @@ interface PageHeroProps {
 
 export function PageHero({ eyebrow, title, subtitle }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-base pt-24 pb-1 sm:pt-28">
-      <div className="glow-red pointer-events-none absolute -right-32 -top-20 h-[34rem] w-[34rem]" />
+    <section className="relative overflow-hidden bg-base pt-24 pb-6 sm:pt-28 sm:pb-8">
+      <BackgroundFX glowClassName="-right-40 -top-32 h-[34rem] w-[34rem]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <motion.span
           initial={{ opacity: 0, y: 16 }}
@@ -38,7 +39,6 @@ export function PageHero({ eyebrow, title, subtitle }: PageHeroProps) {
             {subtitle}
           </motion.p>
         )}
-        <div className="rule mt-7" />
       </div>
     </section>
   );

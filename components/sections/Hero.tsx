@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[90svh] flex-col overflow-hidden"
+      className="relative flex min-h-[84svh] flex-col overflow-hidden"
     >
       {/* Full-bleed gym image */}
       <div className="absolute inset-0">
@@ -32,18 +32,18 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_30%]"
+          className="img-grade object-cover object-[center_30%]"
         />
         {/* Darken for legibility + mood */}
         <div className="absolute inset-0 bg-gradient-to-t from-base via-base/75 to-base/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-base/90 via-base/30 to-transparent" />
       </div>
 
-      {/* Red adrenaline glow */}
-      <div className="glow-red pointer-events-none absolute -left-32 top-1/3 h-[40rem] w-[40rem]" />
+      {/* Subtle gold ambience */}
+      <div className="glow-red pointer-events-none absolute -left-40 top-1/3 h-[26rem] w-[26rem]" />
 
       {/* Centered content */}
-      <div className="relative z-10 flex flex-1 items-center pt-24 pb-8">
+      <div className="relative z-10 flex flex-1 items-center pt-24 pb-10 sm:pb-14">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
           <div className="max-w-4xl">
             <motion.span
@@ -58,11 +58,9 @@ export function Hero() {
 
             <h1 className="display mt-6 text-[2.85rem] leading-[0.88] text-bone sm:text-7xl sm:leading-[0.84] lg:text-[7.5rem]">
               <ScanReveal immediate delay={0.15}>
-                Transform your physique.
+                I don&apos;t sell programs.
                 <span className="mt-1 block">
-                  Become the{" "}
-                  <span className="serif-italic text-accent">strongest</span>{" "}
-                  you.
+                  I <span className="serif-italic text-accent">build physiques.</span>
                 </span>
               </ScanReveal>
             </h1>
@@ -74,10 +72,10 @@ export function Hero() {
               animate="show"
               className="mt-7 max-w-xl text-base leading-relaxed text-mute sm:text-lg"
             >
-              Personalized coaching from ICN Classic &amp; Men&apos;s Physique
-              Champion 2025, Tushar Menath. Build muscle, lose fat, and forge a
-              physique that lasts —{" "}
-              <span className="text-bone">100% naturally.</span>
+              1-on-1 online coaching with ICN Classic &amp; Men&apos;s Physique
+              Champion 2025, Tushar Menath. Your training, your nutrition, your
+              transformation — personally guided,{" "}
+              <span className="text-bone">100% natural.</span>
             </motion.p>
 
             <motion.div

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
 import { WhatYouGet } from "@/components/sections/WhatYouGet";
+import { PlanFinder } from "@/components/sections/PlanFinder";
 import { WhyApply } from "@/components/sections/WhyApply";
 import { FinalCta } from "@/components/sections/FinalCta";
 
@@ -24,6 +25,7 @@ export default function ProgramPage() {
         subtitle="Training, nutrition, accountability and mindset — engineered into one system built to transform your physique and keep it."
       />
       <WhatYouGet />
+      <PlanFinder />
       <WhyApply />
       <FinalCta />
     </>

@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Icon } from "@/components/ui/Icon";
-import { TRANSFORMATIONS } from "@/lib/data";
+import { TRANSFORMATIONS, BRAND } from "@/lib/data";
 
 export function Results() {
   return (
@@ -24,7 +23,7 @@ export function Results() {
 
         <Reveal
           stagger
-          className="mt-8 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-6 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4"
         >
           {TRANSFORMATIONS.map((t) => (
             <Reveal.Item key={t.name}>
@@ -82,10 +81,15 @@ export function Results() {
                 </p>
               </div>
             </div>
-            <Link href="/apply" className="link-arrow shrink-0">
-              I want these results
+            <a
+              href={BRAND.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-arrow shrink-0"
+            >
+              Watch on YouTube
               <Icon name="arrow" className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
         </Reveal>
       </div>

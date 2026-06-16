@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Oswald, Inter, JetBrains_Mono } from "next/font/google";
+import { Saira_Condensed, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
-// Condensed athletic display — strong, high-adrenaline headlines
-const oswald = Oswald({
-  weight: ["500", "600", "700"],
+// Condensed athletic display — sharp, sporty, high-adrenaline headlines
+// (free commercial-OK stand-in for Sprintura)
+const saira = Saira_Condensed({
+  weight: ["600", "700", "800", "900"],
   variable: "--font-display-src",
   subsets: ["latin"],
   display: "swap",
@@ -72,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${oswald.variable} ${inter.variable} ${mono.variable} h-full`}
+      className={`${saira.variable} ${inter.variable} ${mono.variable} h-full`}
     >
       <body className="grain min-h-full flex flex-col">
         <ScrollProgress />
